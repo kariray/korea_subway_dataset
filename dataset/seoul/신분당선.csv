@@ -1,0 +1,14 @@
+number,line,name,english_name,hanja_name,transfer,distance,cumalative_distance,location
+D07,신분당선,강남,Gangnam,江南, 서울 지하철 2호선,-,0.0,서울특별시 강남구
+D08,신분당선,양재(서초구청),Yangjae(Seocho-gu Office),良才(瑞草區廳), 수도권 전철 3호선,1.5,1.5,서울특별시 서초구
+D09,신분당선,양재시민의숲(매헌),Yangjae Citizen's Forest(Maeheon),良才市民의숲(梅軒),,1.6,3.1,서울특별시 서초구
+D10,신분당선,청계산입구,Cheonggyesan,淸溪山入口,,2.9,6.0,서울특별시 서초구
+D11,신분당선,판교(판교테크노밸리),Pangyo(Pangyo Techno Valley),板橋(板橋테크노밸리), 수도권 전철 경강선,8.2,14.2,경기도 성남시
+D12,신분당선,정자,Jeongja,亭子, 수도권 전철 수인·분당선,3.1,17.3,경기도 성남시
+D13,신분당선,미금(분당서울대병원),Migeum(Seoul National University Bundang Hospital),美金, 수도권 전철 수인·분당선,1.9,19.2,경기도 성남시
+D14,신분당선,동천,Dongcheon,東川,,1.6,20.8,경기도 용인시
+D15,신분당선,수지구청,Suji-gu Office,水枝區廳,,2.1,22.9,경기도 용인시
+D16,신분당선,성복,Seongbok,星福,,1.7,24.6,경기도 용인시
+D17,신분당선,상현,Sanghyeon,上峴,,2.1,26.7,경기도 용인시
+D18,신분당선,광교중앙(아주대),Gwanggyo Jungang(Ajou University),光敎中央(亞洲大),,2.4,29.1,경기도 수원시
+D19,신분당선,광교(경기대),Gwanggyo(Kyonggi University),光敎(京畿大),,1.9,31.0,경기도 수원시
