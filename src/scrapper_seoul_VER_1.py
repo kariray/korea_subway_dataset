@@ -1,3 +1,5 @@
+# This Code not use html_table_parser.
+# It's just Fucking CODE!!!!
 import requests
 from bs4 import BeautifulSoup
 import os
@@ -20,25 +22,37 @@ def line_have_two_name(items):
 
 def scrape_station(row, page_name, check_line, check_note):
     global temp_line, temp_location1, temp_location2
+    check_page_name = page_name
     # except_name1 : 소재지에서 구만 하나로 분리 되어 있는 것
-    # except_name2 : 소재지에서 구와 시 모두 하나로 분리 되어 있는 것
+    # except_name2 : 소재지에서 구와 시 모두 하나로 분리 되어 있는 것 또는 시가 맨 처음인 경우 + 구가 분리
     except_name1 = {
-        "서울_지하철_2호선": "신대방",
-        "서울_지하철_2호선": "시청",
-        "서울_지하철_2호선": "까치산",
-        "수도권_전철_경의·중앙선": "구리",
-        "경춘선": "갈매",
-        "수도권_전철_수인·분당선": "청량리",
-        "수도권_전철_수인·분당선": "복정",
-        "신분당선": "강남",
-        "서울_경전철_우이신설선": "신설동",
-        "인천_도시철도_1호선": "인천터미널",
-        "인천_도시철도_2호선": "주안국가산단(인천J밸리)"
+        "231": "서울_지하철_2호선",
+        "201": "서울_지하철_2호선",
+        "234-4": "서울_지하철_2호선",
+        "243": "서울_지하철_2호선",
+        "434": "수도권_전철_4호선",
+        "531": "수도권_전철_5호선",
+        "543": "수도권_전철_5호선",
+        "745": "서울_지하철_7호선",
+        "746": "서울_지하철_7호선",
+        "911": "서울_지하철_9호선",
+        "K123": "수도권_전철_경의·중앙선",
+        "K222": "수도권_전철_수인·분당선",
+        "S122": "서울_경전철_우이신설선",
+        "I126": "인천_도시철도_1호선",
+        "I217": "인천_도시철도_2호선",
+        "A04": "인천국제공항철도"
     }
     except_name2 = {
-        "서울_지하철_7호선": "장암",
-        "서울_지하철_7호선": "도봉산",
-        "김포 도시철도": "김포공항"}
+        "709": "서울_지하철_7호선",
+        "710": "서울_지하철_7호선",
+        "P123": "경춘선",
+        "D07": "신분당선",
+        "K209": "수도권_전철_수인·분당선",
+        "G109": "김포_도시철도",
+        "A06": "인천국제공항철도",
+        "A01": "인천국제공항철도"
+    }
 
     items = row.find_all(["td", "th"])
 
@@ -74,9 +88,9 @@ def scrape_station(row, page_name, check_line, check_note):
     else:
         i = 0
 
-    if (items[-2+i].has_attr("rowspan") and row.find("th", rowspan=lambda x: x != "2")) or (name.replace("\n", "") in except_name2.values() and page_name in except_name2.keys()):
-        temp_location1 = items[-2].get_text().replace("\n", " ")
-        if items[-1+i].has_attr("rowspan") or name.replace("\n", "") in except_name2:
+    if (items[-2+i].has_attr("rowspan") and row.find("th", rowspan=lambda x: x != "2")) or (except_name2.get(number.replace("\n", "").replace(" ", "")) == check_page_name):
+        temp_location1 = items[-2+i].get_text().replace("\n", " ")
+        if items[-1+i].has_attr("rowspan") and row.find("th", rowspan=lambda x: x != "2") or (except_name2.get(number.replace("\n", "").replace(" ", "")) == check_page_name):
             temp_location2 = items[-1+i].get_text()
             location = temp_location1 + temp_location2
             transfer = items[-5+i].get_text()
@@ -89,7 +103,14 @@ def scrape_station(row, page_name, check_line, check_note):
             cumulative_distance = items[-2+i].get_text()
     else:
         location = temp_location1
-        if items[-1+i].has_attr("rowspan") and row.find("th", rowspan=lambda x: x != "2") or (name.replace("\n", "") in except_name1.values() and page_name in except_name1.keys()):
+        if (items[-1+i].has_attr("rowspan") and row.find("th", rowspan=lambda x: x != "2")) or (except_name1.get(number.replace("\n", "").replace(" ", "")) == check_page_name):
+            #temp_location1 = items[-2].get_text().replace("\n", " ")
+            temp_location2 = items[-1+i].get_text()
+            location = temp_location1 + temp_location2
+            transfer = items[-4+i].get_text()
+            distance = items[-3+i].get_text()
+            cumulative_distance = items[-2+i].get_text()
+        elif row.find("th", {"rowspan": "2"}) and items[-1+i].has_attr("rowspan"):
             temp_location2 = items[-1+i].get_text()
             location = temp_location1 + temp_location2
             transfer = items[-4+i].get_text()
@@ -101,8 +122,14 @@ def scrape_station(row, page_name, check_line, check_note):
             distance = items[-2+i].get_text()
             cumulative_distance = items[-1+i].get_text()
 
+    if name.replace("\n", "") == "지축":  # 3호선 지축역
+        location = temp_location1 + temp_location2
+        transfer = items[-3+i].get_text()
+        distance = items[-2+i].get_text()
+        cumulative_distance = items[-1+i].get_text()
+
     return {
-        'number': number.replace("\n", ""),
+        'number': number.replace("\n", "").replace(" ", ""),
         'line': line.replace("\n", ""),
         'name': name.replace("\n", ""),
         'english_name': english_name.replace("\n", ""),
@@ -118,6 +145,7 @@ def get_data_seoul():
     city_name = "seoul"
     # seoul_subway_lines = [[지하철노선이름, 테이블 내 노선명 유무, 테이블 내 비고란 유무, 시작테이블, 끝테이블 + 1(테이블이 한 개면 None)]]
     seoul_subway_lines = [
+        ["수도권_전철_1호선", True, False, 1, 4],
         ["서울_지하철_2호선", False, False, 0, 3],
         ["수도권_전철_3호선", True, False, 0, None],
         ["수도권_전철_4호선", True, False, 0, None],
@@ -153,6 +181,16 @@ def get_data_seoul():
             data = soup.find_all("table", {"class": "wikitable"})[
                 seoul_subway_line[3]]
             rows = data.find_all("tr")[1:]
+        elif line_name == "수도권_전철_1호선":  # 1호선 2번째 테이블 비고란 제거
+            data = soup.find_all("table", {"class": "wikitable"})[
+                seoul_subway_line[3]:seoul_subway_line[4]]
+            rows = []
+            temp = []
+            for i in range(len(data)):
+                temp = data[i].find_all("tr")[1:]
+                if i == 1:
+                    temp = data[i].find_all("tr")[1:-1]
+                rows = rows + temp
         else:
             data = soup.find_all("table", {"class": "wikitable"})[
                 seoul_subway_line[3]:seoul_subway_line[4]]
@@ -168,4 +206,5 @@ def get_data_seoul():
             if scraped_station:
                 line_data["station_data"].append(scraped_station)
 
-        write_csv(line_data, city_name)
+        #write_csv(line_data, city_name)
+        print(line_data)

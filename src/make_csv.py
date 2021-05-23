@@ -7,5 +7,6 @@ def write_csv(line_data, city_name):
     writer.writerow(["number", "line", "name", "english_name", "hanja_name",
                     "transfer", "distance", "cumalative_distance", "location"])
     for d in line_data['station_data']:
-        writer.writerow(list(d.values()))
+        writer.writerow(d.values())
+    print(f"Created {line_data['line_name']}.csv file")
     return
