@@ -73,7 +73,7 @@
 > - This Project is make Korea Subway Dataset throught web-pages Crawling.
 > - If you want download CSV files, go to Dataset folders.
 
-> #### 2. ## Data category
+> #### 2. Data category
 >
 > > #### Seoul Subway Dataset
 > >

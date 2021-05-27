@@ -26,7 +26,7 @@ number,line,name,english_name,hanja_name,transfer,distance,cumalative_distance,l
 733,서울_지하철_7호선,반포,Banpo,盤浦,,0.9,25.9,서울특별시 서초구
 734,서울_지하철_7호선,고속터미널,Express Bus Terminal,高速터미널," 수도권 전철 3호선, 서울 지하철 9호선",0.9,26.8,서울특별시 서초구
 735,서울_지하철_7호선,내방,Naebang,內方,,2.2,29.0,서울특별시 서초구
-736,서울_지하철_7호선,이수(총신대입구),Isu(Chongsin University),梨水, 수도권 전철 4호선,1.0,30.0,서울특별시 동작구
+736,서울_지하철_7호선,이수(총신대입구),Isu(Chongsin University),梨水(總神大入口), 수도권 전철 4호선,1.0,30.0,서울특별시 동작구
 737,서울_지하철_7호선,남성,Namseong,南城,,1.0,31.0,서울특별시 동작구
 738,서울_지하철_7호선,숭실대입구(살피재),Soongsil Univ.(Salpijae),崇實大入口,,2.0,33.0,서울특별시 동작구
 739,서울_지하철_7호선,상도,Sangdo,上道,,0.9,33.9,서울특별시 동작구
@@ -51,4 +51,4 @@ number,line,name,english_name,hanja_name,transfer,distance,cumalative_distance,l
 758,서울_지하철_7호선,굴포천,Gulpocheon,掘浦川,,0.9,56.2,인천광역시 부평구
 759,서울_지하철_7호선,부평구청,Bupyeong-gu Office,富平區廳, 인천 도시철도 1호선,0.9,57.1,인천광역시 부평구
 760,서울_지하철_7호선,산곡,Sangok,山谷,,1.6,58.7,인천광역시 부평구
-761,서울_지하철_7호선,석남,Seongnam,石南, 인천 도시철도 2호선,2.3,61.0,인천광역시 서구
+761,서울_지하철_7호선,석남(거북시장),Seongnam(Geobuk Market),石南(거북市場), 인천 도시철도 2호선,2.3,61.0,인천광역시 서구
