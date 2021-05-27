@@ -1,0 +1,71 @@
+import requests
+from bs4 import BeautifulSoup
+from html_table_parser import parser_functions
+import os
+from make_csv import write_csv
+
+os.system('clear')
+
+
+def scrap_station(row, page_name):
+    line = page_name.replace("_", " ")
+    number = row[0]
+    name = row[1]
+    english_name = row[2]
+    if page_name == "부산-김해_경전철":
+        japanese_name = None
+        chinese_name = None
+        hanja_name = row[3]
+    else:
+        japanese_name = row[3]
+        chinese_name = row[4]
+        hanja_name = None
+    transfer = row[-5]
+    distance = row[-4]
+    cumulative_distance = row[-3]
+    location = row[-2] + " " + row[-1]
+
+    return {
+        'number': number.replace("_", " "),
+        'line': line,
+        'name': name,
+        'english_name': english_name,
+        'japanese_name': japanese_name,
+        'chinese_name': chinese_name,
+        'hanja_name': hanja_name,
+        'transfer': transfer.replace("●", "", 1).replace("●", ","),
+        'distance': distance,
+        'cumulative_distance': cumulative_distance,
+        'location': location
+    }
+
+
+def get_data_pusan():
+    city_name = "pusan"
+    seoul_subway_lines = [
+        "부산_도시철도_1호선",
+        "부산_도시철도_2호선",
+        "부산_도시철도_3호선",
+        "부산_도시철도_4호선",
+        "부산-김해_경전철"
+    ]
+
+    for seoul_subway_line in seoul_subway_lines:
+        line_name = seoul_subway_line
+        line_data = {"line_name": line_name, "station_data": []}
+        url = f"https://ko.wikipedia.org/wiki/{line_name}"
+        request = requests.get(url)
+        soup = BeautifulSoup(request.text, "html.parser")
+
+        if line_name == "부산-김해_경전철":
+            data = soup.find_all("table", {"class": "wikitable"})[1]
+        else:
+            data = soup.find("table", {"class": "wikitable"})
+        table = parser_functions.make2d(data)
+        for i in range(1, len(table)):
+            scraped_station = scrap_station(
+                table[i], line_name)
+            if scraped_station:
+                line_data["station_data"].append(scraped_station)
+
+        write_csv(line_data, city_name)
