@@ -55,6 +55,34 @@
 > > |   역간 거리 |            distance |    char     |
 > > |   누적 거리 | cumulative_distance |    char     |
 > > |      소재지 |            location |    char     |
+>
+> > #### 광주 지하철 데이터셋
+> >
+> > |   데이터 명 |             변수 명 | 데이터 타입 |
+> > | ----------: | ------------------: | :---------: |
+> > |      역번호 |              number |    char     |
+> > |      노선명 |                line |    char     |
+> > |        역명 |                name |    char     |
+> > | 로마자 역명 |        english_name |    char     |
+> > |   한자 역명 |          hanja_name |    char     |
+> > |   접속 노선 |            transfer |    char     |
+> > |   역간 거리 |            distance |    char     |
+> > |   누적 거리 | cumulative_distance |    char     |
+> > |      소재지 |            location |    char     |
+>
+> > #### 대전 지하철 데이터셋
+> >
+> > |   데이터 명 |             변수 명 | 데이터 타입 |
+> > | ----------: | ------------------: | :---------: |
+> > |      역번호 |              number |    char     |
+> > |      노선명 |                line |    char     |
+> > |        역명 |                name |    char     |
+> > | 로마자 역명 |        english_name |    char     |
+> > |   한자 역명 |          hanja_name |    char     |
+> > |   접속 노선 |            transfer |    char     |
+> > |   역간 거리 |            distance |    char     |
+> > |   누적 거리 | cumulative_distance |    char     |
+> > |      소재지 |            location |    char     |
 
 <br />
 <br />
@@ -101,6 +129,14 @@
 > > - [x] 대구 도시철도 1호선
 > > - [x] 대구 도시철도 1호선
 > > - [x] 대구 도시철도 1호선
+>
+> > #### 광주 지하철
+> >
+> > - [x] 광주 도시철도 1호선
+>
+> > #### 대전 지하철
+> >
+> > - [x] 대전 도시철도 1호선
 
 <br />
 <br />
@@ -116,6 +152,14 @@
 > > [위키백과](https://ko.wikipedia.org/wiki/%EC%9C%84%ED%82%A4%EB%B0%B1%EA%B3%BC:%EB%8C%80%EB%AC%B8)
 >
 > > #### 대구 지하철
+> >
+> > [위키백과](https://ko.wikipedia.org/wiki/%EC%9C%84%ED%82%A4%EB%B0%B1%EA%B3%BC:%EB%8C%80%EB%AC%B8)
+>
+> > #### 광주 지하철
+> >
+> > [위키백과](https://ko.wikipedia.org/wiki/%EC%9C%84%ED%82%A4%EB%B0%B1%EA%B3%BC:%EB%8C%80%EB%AC%B8)
+>
+> > #### 대전 지하철
 > >
 > > [위키백과](https://ko.wikipedia.org/wiki/%EC%9C%84%ED%82%A4%EB%B0%B1%EA%B3%BC:%EB%8C%80%EB%AC%B8)
 
@@ -134,6 +178,14 @@
 > > - 없음
 >
 > > #### 대구 지하철
+> >
+> > - 없음
+>
+> > #### 광주 지하철
+> >
+> > - 없음
+>
+> > #### 대전 지하철
 > >
 > > - 없음
 
@@ -194,6 +246,34 @@
 > > |      Distance between stations |            distance |   char    |
 > > |            Cumulative distance | cumulative_distance |   char    |
 > > |                       Location |            location |   char    |
+>
+> > #### Gwang-Ju Subway Dataset
+> >
+> > |                      Data name |            Variable | Data type |
+> > | -----------------------------: | ------------------: | :-------: |
+> > |                 Station Number |              number |   char    |
+> > |                           Line |                line |   char    |
+> > |                   Station Name |                name |   char    |
+> > |           English Station Name |        english_name |   char    |
+> > | Chinese character Station Name |          hanja_name |   char    |
+> > |                  Transfer Line |            transfer |   char    |
+> > |      Distance between stations |            distance |   char    |
+> > |            Cumulative distance | cumulative_distance |   char    |
+> > |                       Location |            location |   char    |
+>
+> > #### Daejeon Subway Dataset
+> >
+> > |                      Data name |            Variable | Data type |
+> > | -----------------------------: | ------------------: | :-------: |
+> > |                 Station Number |              number |   char    |
+> > |                           Line |                line |   char    |
+> > |                   Station Name |                name |   char    |
+> > |           English Station Name |        english_name |   char    |
+> > | Chinese character Station Name |          hanja_name |   char    |
+> > |                  Transfer Line |            transfer |   char    |
+> > |      Distance between stations |            distance |   char    |
+> > |            Cumulative distance | cumulative_distance |   char    |
+> > |                       Location |            location |   char    |
 
 <br />
 <br />
@@ -235,11 +315,13 @@
 > > - [x] Busan Gimhae Light Rail Transit
 > > - [ ] DongHae Line
 >
-> > #### Daegu Subway
+> > #### Gwang-Ju Subway
 > >
 > > - [x] Line1
-> > - [x] Line2
-> > - [x] Line3
+>
+> > #### Daejeon Subway
+> >
+> > - [x] Line1
 
 <br />
 <br />
@@ -255,6 +337,14 @@
 > > [Korea wikipedia](https://ko.wikipedia.org/wiki/%EC%9C%84%ED%82%A4%EB%B0%B1%EA%B3%BC:%EB%8C%80%EB%AC%B8)
 >
 > > #### Daegu Subway
+> >
+> > [Korea wikipedia](https://ko.wikipedia.org/wiki/%EC%9C%84%ED%82%A4%EB%B0%B1%EA%B3%BC:%EB%8C%80%EB%AC%B8)
+>
+> > #### Gwang-Ju Subway
+> >
+> > [Korea wikipedia](https://ko.wikipedia.org/wiki/%EC%9C%84%ED%82%A4%EB%B0%B1%EA%B3%BC:%EB%8C%80%EB%AC%B8)
+>
+> > #### Daejeon Subway
 > >
 > > [Korea wikipedia](https://ko.wikipedia.org/wiki/%EC%9C%84%ED%82%A4%EB%B0%B1%EA%B3%BC:%EB%8C%80%EB%AC%B8)
 
@@ -273,5 +363,13 @@
 > > - None
 >
 > > #### Daegu Subway
+> >
+> > - None
+>
+> > #### Gwang-Ju Subway
+> >
+> > - None
+>
+> > #### Daejeon Subway
 > >
 > > - None
