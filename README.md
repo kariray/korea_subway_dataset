@@ -8,6 +8,7 @@
 > > - 데이터셋을 다운받길 원하시면 dataset 폴더로 가시면 됩니다.
 
 <br />
+<br />
 
 > ### 2. 데이터 분류
 >
@@ -40,7 +41,22 @@
 > > |   역간 거리 |            distance |    char     |
 > > |   누적 거리 | cumulative_distance |    char     |
 > > |      소재지 |            location |    char     |
+>
+> > #### 대구 지하철 데이터셋
+> >
+> > |   데이터 명 |             변수 명 | 데이터 타입 |
+> > | ----------: | ------------------: | :---------: |
+> > |      역번호 |              number |    char     |
+> > |      노선명 |                line |    char     |
+> > |        역명 |                name |    char     |
+> > | 로마자 역명 |        english_name |    char     |
+> > |   한자 역명 |          hanja_name |    char     |
+> > |   접속 노선 |            transfer |    char     |
+> > |   역간 거리 |            distance |    char     |
+> > |   누적 거리 | cumulative_distance |    char     |
+> > |      소재지 |            location |    char     |
 
+<br />
 <br />
 
 > ### 3. 현재 업데이트 된 노선 리스트
@@ -79,7 +95,14 @@
 > > - [x] 부산 도시철도 1호선
 > > - [x] 부산-김해 경전철
 > > - [ ] 동해선
+>
+> > #### 대구 지하철
+> >
+> > - [x] 대구 도시철도 1호선
+> > - [x] 대구 도시철도 1호선
+> > - [x] 대구 도시철도 1호선
 
+<br />
 <br />
 
 > ### 4. 데이터를 가져 온 사이트
@@ -91,7 +114,12 @@
 > > #### 부산 지하철
 > >
 > > [위키백과](https://ko.wikipedia.org/wiki/%EC%9C%84%ED%82%A4%EB%B0%B1%EA%B3%BC:%EB%8C%80%EB%AC%B8)
+>
+> > #### 대구 지하철
+> >
+> > [위키백과](https://ko.wikipedia.org/wiki/%EC%9C%84%ED%82%A4%EB%B0%B1%EA%B3%BC:%EB%8C%80%EB%AC%B8)
 
+<br />
 <br />
 
 > ### 5. 알림
@@ -104,6 +132,10 @@
 > > #### 부산 지하철
 > >
 > > - 없음
+>
+> > #### 대구 지하철
+> >
+> > - 없음
 
 ---
 
@@ -114,6 +146,7 @@
 > - This Project is make Korea Subway Dataset throught web-pages Crawling.
 > - If you want download CSV files, go to Dataset folders.
 
+<br />
 <br />
 
 > ### 2. Data category
@@ -147,7 +180,22 @@
 > > |      Distance between stations |            distance |   char    |
 > > |            Cumulative distance | cumulative_distance |   char    |
 > > |                       Location |            location |   char    |
+>
+> > #### Daegu Subway Dataset
+> >
+> > |                      Data name |            Variable | Data type |
+> > | -----------------------------: | ------------------: | :-------: |
+> > |                 Station Number |              number |   char    |
+> > |                           Line |                line |   char    |
+> > |                   Station Name |                name |   char    |
+> > |           English Station Name |        english_name |   char    |
+> > | Chinese character Station Name |          hanja_name |   char    |
+> > |                  Transfer Line |            transfer |   char    |
+> > |      Distance between stations |            distance |   char    |
+> > |            Cumulative distance | cumulative_distance |   char    |
+> > |                       Location |            location |   char    |
 
+<br />
 <br />
 
 > ### 3. Updated Lines List
@@ -186,7 +234,14 @@
 > > - [x] Line14
 > > - [x] Busan Gimhae Light Rail Transit
 > > - [ ] DongHae Line
+>
+> > #### Daegu Subway
+> >
+> > - [x] Line1
+> > - [x] Line2
+> > - [x] Line3
 
+<br />
 <br />
 
 > ### 4. Data Crawling Site
@@ -198,7 +253,12 @@
 > > #### Busan Subway
 > >
 > > [Korea wikipedia](https://ko.wikipedia.org/wiki/%EC%9C%84%ED%82%A4%EB%B0%B1%EA%B3%BC:%EB%8C%80%EB%AC%B8)
+>
+> > #### Daegu Subway
+> >
+> > [Korea wikipedia](https://ko.wikipedia.org/wiki/%EC%9C%84%ED%82%A4%EB%B0%B1%EA%B3%BC:%EB%8C%80%EB%AC%B8)
 
+<br />
 <br />
 
 > ### 5. Notice
@@ -209,5 +269,9 @@
 > > - Because, `VER_1` is very BAD code with more than 200 lines. So, `VER_2` that used `html_table_parser` better than `VER_1`
 >
 > > #### Busan Subway
+> >
+> > - None
+>
+> > #### Daegu Subway
 > >
 > > - None
