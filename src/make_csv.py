@@ -4,7 +4,7 @@ import csv
 def write_csv(line_data, city_name):
     file = open(f"dataset/{city_name}/{line_data['line_name']}.csv", mode="w")
     writer = csv.writer(file)
-    if city_name == "seoul":
+    if city_name == "seoul" or city_name == "daegu":
         writer.writerow(["number", "line", "name", "english_name", "hanja_name",
                          "transfer", "distance", "cumalative_distance", "location"])
     elif city_name == "pusan":
